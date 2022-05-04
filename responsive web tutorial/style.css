@@ -1,0 +1,259 @@
+
+@import "https://unpkg.com/open-props";
+@import "https://unpkg.com/open-props/normalize.min.css";
+body{
+    
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 300;
+}
+img{
+    max-width: 100%;
+    display: block;
+}
+/* typeography */
+
+header{
+    
+    padding: 2em 2em;
+    text-align: center;
+    max-width: 100%;
+    background-color: aqua;
+    margin-bottom: 2em ;
+}
+h1,
+h2,
+h3{
+    font-weight: 400;
+    margin-top: 0;
+}
+h1{
+    font-size: 2rem;
+    font-weight: 400;
+    margin:0 auto;
+}
+a{
+    font-weight: 700;
+}
+a:hover,a:focus{
+color: grey;
+}
+.subtitle{
+    font-weight: 700;
+    font-size: .75rem;
+    margin: 0;
+}
+.article-title{
+    font-size: 1.5rem;
+}
+.read-more,.article-info{
+    font-size: 1rem;
+}
+.read-more{
+    text-decoration: none;
+    font-weight: 700;
+   
+}
+.read-more:hover,
+.read-more:focus{
+    text-decoration: underline;
+    color: gray;
+
+}
+.article-info{
+    margin: 2.5em 0;
+}
+/*layout */
+.container{
+    width: 98%;
+    /* max-width: 900px; */
+     
+    margin:0 auto;
+
+}
+.container-flex{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+
+}
+
+nav ul{
+ list-style-type: none;
+ display: flex;
+justify-content: center;
+padding: 0;
+flex-direction: column;
+
+}
+
+nav li{
+margin: .5em ;
+
+
+}
+nav a{
+   color: black;
+    text-decoration: none;
+    font-weight: 700;
+    
+    padding: .25em 0 ;
+}
+
+nav a:hover,nav a:focus{
+color: blue;
+border-bottom: 1px black solid;
+
+}
+footer{
+    text-align: center;
+    padding: 3rem;
+}
+.current-page{
+    border-bottom: 1px solid black;
+    padding-bottom: .25em;
+
+}
+.current-page:hover,.current-page:focus{
+    color: black;
+}
+
+/* articles*/
+
+.artilcle-feature{
+    border-bottom: black 1px solid;
+    padding-bottom: 1em;
+}
+.artilcle-recent{
+    display: flex;
+    flex-direction: column;
+}
+.artilcle-recent-main{
+order: 2;
+}
+.artilcle-recent-sec{
+    order:1;
+}
+.sidebar-widget{
+    border: 10px solid lightgrey;
+    margin-bottom: 2em;
+    padding: 1rem;
+
+}
+.widget-title, .widget-post-title{
+    font-size: 1.5rem;
+}
+.widget-title{
+    
+    font-weight: 700;
+}
+.widget-recent-post{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid grey;
+    margin-bottom: 1rem;
+   
+}
+.widget-recent-post:last-child{
+    border: 0;
+    margin: 0;
+}
+.widget-post-title{
+    order: 2;
+ 
+}
+.widget-img{
+    order: 1;
+}
+/* media scroller*/
+.media-scroller{
+    --spacer: 1rem;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 21%;
+
+    gap: var(--spacer);
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding: 0 var(--spacer) var(--spacer);
+}
+.media-element{
+    display: grid;
+    grid-auto-rows: min-content;
+    gap: var(--spacer);
+    padding: var(--spacer);
+    background-color: whitesmoke;
+    box-shadow:20px;
+    border-radius: 1rem;
+}
+.media-element > img{
+    height: 100%;
+    width: auto;
+    inline-size: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    overflow: hidden;
+}
+.snap-inlines{
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: var(--spacer, 1rem);
+}
+.snap-inlines > *{
+scroll-snap-align: start;
+}
+
+/* media queries*/
+
+
+@media (min-width: 750px){
+    .container-flex{
+        flex-direction: row;
+    }
+    main{
+        width: 75%;
+
+    }
+    aside{
+        width: 20%;
+        min-width: 200px;
+        margin-left: 1em;
+    }
+    nav ul{
+        flex-direction: row;
+ 
+    }
+    .artilcle-recent{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .artilcle-recent-main{
+       width: 67%;
+       margin-top: .5em;
+    }
+    .artilcle-recent-sec{
+        width:30%;
+    }
+    .article-body{
+        text-align: left;
+    }
+    .article-img{
+         width: 100%;
+         min-height: 250px;
+         object-fit: cover;
+       
+    }
+    
+    .artilcle-feature{
+        display: flex;
+        flex-direction: column;
+    }
+    .artilcle-feature img{
+        order: -2;
+    }
+    .article-info{
+        order: -1;
+    }
+
+}
+
+
